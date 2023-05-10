@@ -27,7 +27,7 @@ public class UserDaoService {
     public User findOne(int id) {
         if (id <= users.size()) {
             return users.get(id - 1);
-        } else return new User(0, "not found", LocalDate.now().plusYears(1000));
+        } else return null;
     }
 
     public User save(User user)  {
