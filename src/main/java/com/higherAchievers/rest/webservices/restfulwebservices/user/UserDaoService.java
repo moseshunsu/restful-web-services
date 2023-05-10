@@ -23,17 +23,24 @@ public class UserDaoService {
         return users;
     }
 
-    //TODO 3 return List of Users
+    public User save(User user)  {
+        user.setId(++usersCount);
+        users.add(user);
+        return user;
+    }
+
+    //TODO 3 return a specific Users
     public User findOne(int id) {
         if (id <= users.size()) {
             return users.get(id - 1);
         } else return null;
     }
 
-    public User save(User user)  {
-        user.setId(++usersCount);
-        users.add(user);
-        return user;
+    //TODO 4 deleting a Users
+    public void deleteById(int id) {
+        if (id <= users.size()) {
+            users.remove(id - 1);
+        }
     }
 
 }
